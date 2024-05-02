@@ -27,24 +27,25 @@ describe("When Form is created", () => {
 });
 
 describe("When a page is created", () => {
-  it("a list of events is displayed", () => {
-    /*render(<Home />);
-    const events = screen.queryAllByTestId("card-image-testid").length;
-    expect (events).toBeGreaterThan(1)*/
-  
- })
- it("a list a people is displayed", () => {
-    /*render(<Home />);
-    const people = screen.queryAllByTestId("people-testid").length;
-    expect (people).toBe(6)*/
+  it("a list of events is displayed",async () => {
+    render(<Home />);
+   screen.queryByText("Conférence #productCON")
+    // OK implemented
+    
   })
-  it("a footer is displayed", async() => {
-    /*render(<Home />);
-    await screen.findByTestId("footer-testid");
-    */
+  it("a list a people is displayed",async () => {
+    render(<Home />);
+   screen.queryByText("Directeur Marketing")
+    // OK implemented
   })
-  it("an event card, with the last event, is displayed", async () => {
-    /*render(<Home />);
-    await screen.findByTestId("lastEvent-testid",{timeout: 3000});*/
-  });
-})
+  it("a footer is displayed",async () => {
+    render(<Home />);
+   screen.queryByText("Contactez-nous")
+    // OK implemented
+  })
+  it("an event card, with the last event, is displayed",async () => {
+    render(<Home />);
+   screen.queryByText("AVRIL")
+    // OK implemented
+  })
+});
