@@ -27,25 +27,14 @@ describe("When Form is created", () => {
 });
 
 describe("When a page is created", () => {
-  it("a list of events is displayed",async () => {
+ 
+  it("a list of events,people , footer and an event card with last event ,is displayed",async()=> {
+   
     render(<Home />);
-   screen.queryByText("Conférence #productCON")
-    // OK implemented
+    screen.queryByText("Conférence #productCON")
+    screen.queryByText("Directeur Marketing")
+    screen.queryByText("Contactez-nous")
+    screen.queryByText("AVRIL")
     
-  })
-  it("a list a people is displayed",async () => {
-    render(<Home />);
-   screen.queryByText("Directeur Marketing")
-    // OK implemented
-  })
-  it("a footer is displayed",async () => {
-    render(<Home />);
-   screen.queryByText("Contactez-nous")
-    // OK implemented
-  })
-  it("an event card, with the last event, is displayed",async () => {
-    render(<Home />);
-   screen.queryByText("AVRIL")
-    // OK implemented
   })
 });

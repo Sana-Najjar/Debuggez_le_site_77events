@@ -14,3 +14,15 @@ export const MONTHS = {
 };
 
 export const getMonth = (date) => MONTHS[date.getMonth() +1];
+
+/**
+ * The function getMonth takes a date as input and should return the month of that date.
+ * @param date - The `getMonth` function is likely intended to extract the month from a given date. To
+ * implement this function, you can use the `getMonth` method of the `Date` object in JavaScript.
+ * Here's how you can complete the function:
+ */
+export const getMonthBis = (date = new Date()) => {
+  if (!(date instanceof Date)) throw new Error("The input is not a date");
+  const m = date.getMonth(); // 0, 1, 2, ..., 11
+  return MONTHS[m+1]
+}
