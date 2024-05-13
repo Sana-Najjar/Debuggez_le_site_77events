@@ -17,10 +17,15 @@ const Page = () => {
 
    const { data } = useData();
    const last =
-     data && data.events && data.events.length > 0
-       ? data.events[data.events.length - 1]
-       : null;
+   data && data.events && data.events.length > 0
+     ? data.events.reduce((latest, current) => {
+         // Utiliser la date pour comparer et trouver la prestation la plus récente
+         const latestDate = new Date(latest.date);
+         const currentDate = new Date(current.date);
 
+         return currentDate > latestDate ? current : latest;
+       })
+     : null;
   return (
      <>
     <header>
@@ -130,9 +135,12 @@ const Page = () => {
           {({ setIsOpened }) => (
             <EventCard
               onClick={() => setIsOpened(true)}
+              data-testid="last-event-card"
               imageSrc={last?.cover}
+              imageAlt={last?.description}
               title={last?.title}
               date={new Date(last?.date)}
+              small
               label={last?.type}
             />
           )}
