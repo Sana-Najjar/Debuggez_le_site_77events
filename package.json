@@ -24,6 +24,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://sana-najjar.github.io/Debuggez_le_site_77events",
   "eslintConfig": {
     "extends": [
       "react-app",
